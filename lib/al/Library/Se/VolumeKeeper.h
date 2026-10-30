@@ -7,20 +7,20 @@ class AudioEffectLevelDetector;
 
 class SeGroupVolumeKeeper {
 public:
-    SeGroupVolumeKeeper(AudioEffectLevelDetector*);
+    SeGroupVolumeKeeper(AudioEffectLevelDetector* detector);
 
-    void update(bool);
+    void update(bool b11);
     f32 getVolumeAtmos() const;
     f32 getVolumeAtmosObj() const;
     f32 getVolumePlayerVoice() const;
     f32 getVolumePlayer() const;
 
 private:
-    AudioEffectLevelDetector* mLevelDirector;
+    AudioEffectLevelDetector* mLevelDetector;
     f32 mRatio = 0.0f;
     f32 mDecibel = -96.0f;
-    bool mIsBool10 = false;
-    bool mIsBool11 = false;
+    bool _10 = false;
+    bool _11 = false;
 };
 
 static_assert(sizeof(SeGroupVolumeKeeper) == 0x18);
